@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='yu-citic-interview-09425a79cecc';
+const CACHE='yu-citic-interview-7ec57272949a';
 const paths=["./","index.html","app-ISLIJGYK.js","app-I5XFOG2Y.css"].map(p=>new URL(p,self.registration.scope).href);
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(paths)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('yu-citic-interview-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
